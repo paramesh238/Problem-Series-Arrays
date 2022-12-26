@@ -106,7 +106,7 @@ for(let i=0;i<arr.length-1;i++)
 // Problem - 3:
 // ============
 // Reverse of givien array
-// Input : a = [1,2,3,4,50
+// Input : a = [1,2,3,4,5]
 // Output : a = [5,4,3,2,1]
 
 // Case - i :(By using swapping technique - Rohan Sharma)
@@ -143,6 +143,40 @@ console.log(b);
 
 // Problem - 4:
 // ============
+// Additin of two arrays of diffeent sizes
+// Input : a = [2,4,6,7,9] & b = [2,4,7]
+// Output : c = [2,4,9,2,6]
+
+//                                                                Solution - 1 [KPR]
+// -----------------------------------------------------------------------------------------------------------------------------------------------------------
+// This method is only working if string length of digits is less than 15
+let a = [1,2,3,9];
+let b = [2,3,7];
+let c = [];
+let a1 = [], b1 = [];
+// convert int to string 
+let a_ItoS = "", b_ItoS = "";
+for(let i=0;i<a.length;i++)
+{
+    a_ItoS += a[i];
+}
+for(let i=0;i<b.length;i++)
+{
+    b_ItoS += b[i];
+}
+// convert string back into integer while applying math addition
+let temp = parseInt(a_ItoS) + parseInt(b_ItoS);
+let result = "" + temp;
+for(let i=0;i<result.length;i++)
+{
+    c[i] = parseInt(result[i]);
+}
+console.log("Sum of two arrays is : " + c);
+
+//                                                                Solution - 2 [Roshan Sharma]
+// -----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------
 //                                                                *     *    *    *   *
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------
