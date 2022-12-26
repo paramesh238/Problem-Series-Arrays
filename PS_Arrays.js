@@ -175,6 +175,55 @@ console.log("Sum of two arrays is : " + c);
 
 //                                                                Solution - 2 [Roshan Sharma]
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------
+// Step 1 : Reverse both the arrays
+// Step 2 : Iterate while loop until length of a[] elements (or) until length of b[] elements (or) carry not zero
+// Step 3 : let n be the lenght a[] & m be the length of b[]
+//          let x = 0, y = 0, carry =0;
+//             if(i < n) x = a[i]
+//             if(j < m) y = b[j]
+//         sum =  x + y + carry;
+//         carry = sum/10  forward the carry to next iteration
+//         sum = sum/10 to get the current sum
+//         i++,j++
+// Step 4 : reverse the result array
+
+let a = [9,9,5,1,7,6];
+let b = [9,3,2,5,5,2,6];
+
+function rev(arr)
+{
+    let i = 0;
+    let j = arr.length - 1;
+    while(i<j)
+    {
+        let temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+        i++,j--;
+    }
+    return arr;
+}
+
+rev(a);
+rev(b);
+
+let i=0, j=0, carry=0, result=[];
+var n=a.length, m=b.length;
+while(i<n || j<m || carry!=0)
+{
+    let x = 0;
+    let y = 0;
+    if(i<n) x=a[i];
+    if(j<m) y=b[j];
+
+    let sum = carry + x + y;
+    carry = parseInt(sum/10);
+    sum = sum%10;
+    result.push(sum);
+    i++,j++;
+}
+result = rev(result);
+console.log(result);
 
 
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------
